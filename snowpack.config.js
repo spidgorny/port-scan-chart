@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     '@snowpack/plugin-react-refresh',
     '@snowpack/plugin-dotenv',
-    ['@snowpack/plugin-typescript', { path: 'yarn pnpify tsc' }],
+    ['@snowpack/plugin-typescript', { tsc: 'yarn pnpify tsc' }],
   ],
   routes: [
     /* Enable an SPA Fallback in development: */

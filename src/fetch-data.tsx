@@ -1,7 +1,10 @@
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 import axios from 'axios';
+import type { Entry } from './show-bar-chart';
 
-export function FetchData(props: PropsWithChildren<{}>): React.FC {
+export function FetchData(
+  props: PropsWithChildren<{ children: (data: Entry[]) => JSX.Element }>,
+) {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
@@ -10,7 +13,7 @@ export function FetchData(props: PropsWithChildren<{}>): React.FC {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData().then((r) => {});
   }, []);
 
   if (!data || !data.length) {
