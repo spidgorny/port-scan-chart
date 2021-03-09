@@ -4,6 +4,7 @@ import type { ChartEntry, Entry } from './show-bar-chart';
 import { ShowBarChart } from './show-bar-chart';
 import VerticalBar from './vertical-bar';
 import { ReactChartsExample } from './react-charts-example';
+import { RechartDemo } from './rechart-demo';
 
 export function RenderData(props: { data: Entry[] }) {
   const minTime = props.data.reduce((min: Entry, entry: Entry) => {
@@ -46,8 +47,9 @@ export function RenderData(props: { data: Entry[] }) {
       <div>{maxTime.timestamp}</div>
       <div>{Object.keys(chart1).length}</div>
       {/*<ShowBarChart chart1={chart1} />*/}
-      {/*<VerticalBar />*/}
-      <ReactChartsExample />
+      <VerticalBar />
+      {/*<ReactChartsExample />*/}
+      <RechartDemo />
     </div>
   );
 }
